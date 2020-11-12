@@ -1,247 +1,52 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:project_mobile_app/custWid/customBar.dart';
-import 'package:project_mobile_app/profile.dart';
+import 'package:project_mobile_app/berita.dart';
+import 'package:project_mobile_app/biodata.dart';
 
-class MainPage extends StatefulWidget {
-  @override
-  _MainPageState createState() => _MainPageState();
-}
+class Dashboard extends StatelessWidget {
+  Dashboard();
 
-class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar:AppBar(
-          backgroundColor: Colors.deepOrange,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+    return ListView(
+      padding: const EdgeInsets.all(5),
+      children: <Widget>[
+        Align(
+          alignment: Alignment.center,
+          child: Column(
             children: <Widget>[
-              InkWell(
-                borderRadius: BorderRadius.circular(20),
-                splashColor: Colors.deepOrange,
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.leftToRight,
-                          child: ProfilePage()));
-                },
-                child: Icon(
-                  Icons.account_circle,
-                  color: Colors.white,
-                  size: 35,
+              Container(
+                  margin: EdgeInsets.fromLTRB(0, 125, 300, 0),
+                  child: Text(
+                    "Biodata",
+                    style: TextStyle(
+                        color: Colors.black54,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        fontStyle: FontStyle.italic),
+                    textAlign: TextAlign.end,
+                  )),
+              Container(
+                //margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                height: 150,
+                decoration: BoxDecoration(
+                  //border: Border.all(color: Colors.black12),
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white70,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(0.2),
+                        spreadRadius: 2,
+                        blurRadius: 10,
+                        offset: Offset(0, 3))
+                  ],
                 ),
+                child: Biodata(),
               ),
-              Text(
-                "SIMPEDAS",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w900,
-                    fontSize: 25),
-              )
             ],
           ),
         ),
-        body: Stack(
-          children: <Widget>[
-            ListView(
-              padding: const EdgeInsets.all(5),
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.center,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                          margin: EdgeInsets.fromLTRB(0, 125, 300, 0),
-                          child: Text(
-                            "Biodata",
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                fontStyle: FontStyle.italic),
-                            textAlign: TextAlign.end,
-                          )),
-                      Container(
-                        //margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        height: 150,
-                        decoration: BoxDecoration(
-                          //border: Border.all(color: Colors.black12),
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white70,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.2),
-                                spreadRadius: 2,
-                                blurRadius: 10,
-                                offset: Offset(0, 3))
-                          ],
-                        ),
-                        child: ListView(
-                          children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(left: 7, top: 5),
-                                  child: Text(
-                                    "Kepala Keluarga",
-                                    style: TextStyle(
-                                        fontStyle: FontStyle.italic,
-                                        fontSize: 12,
-                                        color: Colors.black26),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Card(
-                              elevation: 0.5,
-                              child: Row(
-                                children: <Widget>[
-                                  Container(
-                                      margin: EdgeInsets.all(5),
-                                      child: Text(
-                                        "Agus Susilo",
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color: Colors.black87),
-                                      )),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(left: 7, top: 5),
-                                  child: Text(
-                                    "Anggota Keluarga",
-                                    style: TextStyle(
-                                        fontStyle: FontStyle.italic,
-                                        fontSize: 12,
-                                        color: Colors.black26),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Card(
-                              elevation: 0.5,
-                              color: Colors.white,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  keluargaAgus("Istri Pertama"),
-                                  keluargaAgus("Istri Kedua"),
-                                  keluargaAgus("Istri Ketiga"),
-                                  keluargaAgus(
-                                      "Anak Pertama Dari Istri Pertama"),
-                                  keluargaAgus("Anak Pertama Dari Istri Kedua"),
-                                  keluargaAgus("Anak Kedua Dari Istri Pertama"),
-                                  keluargaAgus(
-                                      "Anak Pertama Dari Istri Ketiga"),
-                                  keluargaAgus(
-                                      "Anak Ketiga Dari Istri Pertama"),
-                                  keluargaAgus("Istri Simpanan")
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                          margin: EdgeInsets.fromLTRB(0, 20, 300, 0),
-                          child: Text(
-                            "Berita",
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                fontStyle: FontStyle.italic),
-                            textAlign: TextAlign.end,
-                          )),
-                      Container(
-                        //margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        // height: 1000,
-                        decoration: BoxDecoration(
-                          //border: Border.all(color: Colors.black12),
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white60,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.2),
-                                spreadRadius: 2,
-                                blurRadius: 10,
-                                offset: Offset(0, 3))
-                          ],
-                        ),
-                        child: Column(
-                          children: <Widget>[
-                            newsCard(),
-                            newsCard(),
-                            newsCard(),
-                            newsCard(),
-                            newsCard()
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                CustomBar()
-              ],
-            ),
-          ],
-        ),
-      ),
+        Align(child: Berita())
+      ],
     );
-  }
-
-  Card newsCard() {
-    return Card(
-        elevation: 0.5,
-        child: ListTile(
-          leading: CircleAvatar(
-            backgroundImage: AssetImage("images/news.jpeg"),
-            maxRadius: 25,
-          ),
-          title: Text(
-            "Subsidi Beras dari Pemerintah",
-            style:
-                TextStyle(fontWeight: FontWeight.bold, color: Colors.black87),
-          ),
-          subtitle: Text(
-              "Untuk membantu meringankan beban masyarakat terdampak Covid-19 pemerintah berikan 10.000 subsidi beras gratis kepada masyarakat",
-              style: TextStyle(fontStyle: FontStyle.italic),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis),
-          trailing: Icon(Icons.more_vert),
-          isThreeLine: true,
-        ));
-  }
-
-  Container keluargaAgus(String text) {
-    return Container(
-        margin: EdgeInsets.only(left: 5, top: 2),
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 15, color: Colors.black87),
-        ));
   }
 }

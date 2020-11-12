@@ -27,22 +27,24 @@ class _CustomBarState extends State<CustomBar> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter)),
       child: Container(
-        margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(20), topLeft: Radius.circular(20)),
-          color: Colors.white,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            ColorButton(Colors.white, Colors.deepOrange, Icons.dashboard, "Beranda"),
-            ColorButton(Colors.white, Colors.deepOrange, Icons.assignment, "Biodata"),
-            ColorButton(Colors.white, Colors.deepOrange, Icons.public, "Berita"),
-          ],
-        )
-      ),
+          margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20), topLeft: Radius.circular(20)),
+            color: Colors.white,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              ColorButton(
+                  Colors.white, Colors.deepOrange, Icons.dashboard, "Beranda"),
+              ColorButton(
+                  Colors.white, Colors.deepOrange, Icons.assignment, "Biodata"),
+              ColorButton(
+                  Colors.white, Colors.deepOrange, Icons.public, "Berita"),
+            ],
+          )),
     );
   }
 }

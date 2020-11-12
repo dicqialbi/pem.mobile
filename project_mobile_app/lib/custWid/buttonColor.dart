@@ -5,10 +5,13 @@ class ColorButton extends StatefulWidget {
   IconData iconData;
   var textIcon;
 
-  @override
-  _ColorButtonState createState() => _ColorButtonState(mainColor, secondColor, iconData, textIcon);
 
-  ColorButton(this.mainColor, this.secondColor, this.iconData, this.textIcon);
+  @override
+  _ColorButtonState createState() =>
+      _ColorButtonState(mainColor, secondColor, iconData, textIcon);
+
+  ColorButton(this.mainColor, this.secondColor, this.iconData, this.textIcon,
+      );
 }
 
 class _ColorButtonState extends State<ColorButton> {
@@ -17,7 +20,8 @@ class _ColorButtonState extends State<ColorButton> {
   IconData iconData;
   var textIcon;
 
-  _ColorButtonState(this.mainColor, this.secondColor, this.iconData, this.textIcon);
+  _ColorButtonState(this.mainColor, this.secondColor, this.iconData,
+      this.textIcon);
 
   @override
   Widget build(BuildContext context) {

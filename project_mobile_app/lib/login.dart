@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/dashboard.dart';
+import 'package:project_mobile_app/home.dart';
 
 class LoginPage extends StatelessWidget {
   double getSmallDiameter(BuildContext context) =>
