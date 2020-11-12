@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:project_mobile_app/custWid/customBar.dart';
 import 'package:project_mobile_app/profile.dart';
 
 class MainPage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _MainPageState extends State<MainPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
+        appBar:AppBar(
           backgroundColor: Colors.deepOrange,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -203,144 +204,7 @@ class _MainPageState extends State<MainPage> {
             ),
             Column(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.withOpacity(0.2),
-                            spreadRadius: 2,
-                            blurRadius: 10,
-                            offset: Offset(0, 3))
-                      ],
-                      gradient: LinearGradient(
-                          colors: [Colors.deepOrange, Colors.orange],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter)),
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          topLeft: Radius.circular(20)),
-                      color: Colors.white,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                          width: 70,
-                          height: 70,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(10),
-                                  topLeft: Radius.circular(10)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey.withOpacity(0.2),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
-                                    offset: Offset(0, 3))
-                              ],
-                              color: Colors.white),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Icon(
-                                  Icons.dashboard,
-                                  color: Colors.deepOrange,
-                                ),
-                                iconSize: 30,
-                                onPressed: () {},
-                              ),
-                              Text(
-                                "Beranda",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black54),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 70,
-                          height: 70,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(10),
-                                  topLeft: Radius.circular(10)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey.withOpacity(0.2),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
-                                    offset: Offset(0, 3))
-                              ],
-                              color: Colors.white),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Icon(
-                                  Icons.assignment,
-                                  color: Colors.deepOrange,
-                                ),
-                                iconSize: 30,
-                                onPressed: () {},
-                              ),
-                              Text(
-                                "Biodata",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black54),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: 70,
-                          height: 70,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(10),
-                                  topLeft: Radius.circular(10)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey.withOpacity(0.2),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
-                                    offset: Offset(0, 3))
-                              ],
-                              color: Colors.white),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Icon(
-                                  Icons.public,
-                                  color: Colors.deepOrange,
-                                ),
-                                iconSize: 30,
-                                onPressed: () {},
-                              ),
-                              Text(
-                                "Berita",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black54),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                CustomBar()
               ],
             ),
           ],
