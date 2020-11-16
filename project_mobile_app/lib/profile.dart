@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/dashboard.dart';
-import 'dashboard.dart';
+import 'package:project_mobile_app/custWid/buttonProfile.dart';
+import 'package:project_mobile_app/home.dart';
+import 'package:project_mobile_app/login.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -10,91 +13,108 @@ class ProfilePage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.deepOrange,
-          title: Text("PROFIL"),
-        ),
-        body: Column(
-          children:<Widget> [
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.only(left:5.0),
-              height: 50,
-              decoration: BoxDecoration(color: Colors.deepOrange, borderRadius: BorderRadius.circular(5.0)),
-              child:Row(
-                children:<Widget> [
-                  Image.asset("images/assets_akun.png", width: 20.0, height: 20.0,),
-                  Text(" Akun",textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.white,),
+          title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  splashColor: Colors.deepOrange,
+                  onTap: () {
+                    Navigator.pop(context,
+                        MaterialPageRoute(builder: (context) {
+                      return MainPage();
+                    }));
+                  },
+                  child: Icon(
+                    Icons.home,
+                    color: Colors.white,
+                    size: 35,
                   ),
-                ],
-              ),
-            ),
+                ),
+                Text("SIMPEDAS",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w900,
+                        fontSize: 25))
+              ]),
+        ),
+        body: ListView(
+          children: <Widget>[
+            Center(
+                child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(20),
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 3,
+                            blurRadius: 5,
+                            offset: Offset(0, 5))
+                      ],
+                      borderRadius: BorderRadius.circular(100),
+                      color: Colors.white,
+                      image: DecorationImage(
+                          image: AssetImage("images/group.jpg"),
+                          fit: BoxFit.cover)),
+                ),
+                Text(
+                  "KELOMPOK N",
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.deepOrange,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppin'),
+                ),
+                Text("Pemrograman@berbasis.MobileB"),
+              ],
+            )),
             Container(
-              alignment: Alignment.centerLeft,
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.only(left:5.0),
-              height: 50,
-              decoration: BoxDecoration(color: Colors.deepOrange, borderRadius: BorderRadius.circular(5.0)),
-              child: Row(
-                children:<Widget> [
-                  Image.asset("images/assets_bahasa.png", width: 20.0, height: 20.0,),
-                  Text(" Bahasa",
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.white)),
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black54.withOpacity(0.5),
+                      spreadRadius: 0,
+                      blurRadius: 0,
+                      offset: Offset(2, 2))
                 ],
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.white,
               ),
-            ),
-
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.only(left:5.0),
-              height: 50,
-              decoration: BoxDecoration(color: Colors.deepOrange, borderRadius: BorderRadius.circular(5.0)),
-              child: Row(
+              child: Column(
                 children: <Widget>[
-                  Image.asset("images/assets_bantuan.png", width: 20.0, height: 20.0,),
-                  Text(" Bantuan",
-                      style: TextStyle(
-                          fontSize:22,
-                          color: Colors.white)),
+                  MyButtonProfile(Icons.person, "Akun", Colors.deepOrange),
+                  MyButtonProfile(Icons.help, "Bantuan", Colors.orange),
+                  MyButtonProfile(Icons.info, "Tentang", Colors.deepOrange)
                 ],
               ),
             ),
             Container(
-              alignment: Alignment.centerLeft,
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.only(left:5.0),
-              height: 50,
-              decoration: BoxDecoration(color: Colors.deepOrange, borderRadius: BorderRadius.circular(5.0)),
-              child:Row(
-                children:<Widget> [
-                  Image.asset("images/assets_logout.png",width: 20.0, height: 20.0),
-                  Text(" Keluar",
-                      style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,)),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top:300.0),
-              alignment:Alignment.bottomRight,
-              child: RaisedButton(child: Text("BACK TO DASHBOARD"),
-                onPressed: (){
-                  Navigator.pop(context, MaterialPageRoute(builder: (context){
-                    return Dashboard();
-                  }));
-                },
-              ),
-            ),
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(10),
+                  splashColor: Colors.orange,
+                  onTap: () {
+                    Duration(microseconds: 1);
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
+                      return LoginPage();
+                    }));
+                  },
+                  child: MyButtonProfile(
+                      Icons.assignment_return, "Keluar", Colors.orange),
+                ))
           ],
         ),
       ),
     );
   }
 }
-

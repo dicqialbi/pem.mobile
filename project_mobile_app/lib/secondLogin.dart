@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project_mobile_app/custWid/customForm.dart';
 import 'package:project_mobile_app/custWid/logoLogin.dart';
-import 'package:project_mobile_app/signup.dart';
 
-class LoginPage extends StatelessWidget {
+class SecondLoginPage extends StatelessWidget {
+  SecondLoginPage();
   double getSmallDiameter(BuildContext context) =>
       MediaQuery.of(context).size.width * 1 / 3;
 
@@ -94,39 +94,8 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.fromLTRB(25, 335, 25, 10),
-                  child: Column(
-                    children: <Widget>[
-                      MyCustomForm()
-                    ],
-                  ),
+                  child: MyCustomForm(),
                 ),
-                Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 0, 80),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "Belum Punya Akun?  ",
-                          style: TextStyle(
-                              color: Colors.black26,
-                              fontStyle: FontStyle.italic),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushReplacement(context,
-                                MaterialPageRoute(builder: (context) {
-                              return SignUpPage();
-                            }));
-                          },
-                          child: Text(
-                            "DAFTAR",
-                            style: TextStyle(
-                                color: Colors.orange,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ))
               ],
             ),
           )
