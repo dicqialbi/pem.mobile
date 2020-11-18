@@ -12,3 +12,4 @@ KELOMPOK N :
   # UPDATE PROGRES
   1. Pembuatan Halaman Login dan Beranda
   2. Implementasi Custom Widget dan StatefulWidget
+  3. Menambahkan tampilan baru dan memberikan validasi pada form login dan signup
