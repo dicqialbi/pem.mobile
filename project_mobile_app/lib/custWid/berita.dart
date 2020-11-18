@@ -3,6 +3,8 @@ import 'package:project_mobile_app/custWid/news.dart';
 import 'package:project_mobile_app/custWid/berita1.dart';
 import 'package:project_mobile_app/custWid/berita2.dart';
 import 'package:project_mobile_app/custWid/berita3.dart';
+import 'package:project_mobile_app/custWid/berita4.dart';
+
 
 class Berita extends StatefulWidget {
   Berita();
@@ -69,6 +71,16 @@ class _BeritaState extends State<Berita> {
                             "Telkomsel Bagi-bagi Paket Internet Murah Sampai Kuota Gratis, 10 GB Rp 2 Ribuan",
                             "Segera daftarkan bro kode promo Paket Internet Murah 30GB Cuma Rp 5 Ribuan, kini ada Promo Telkomsel 10GB Cuma Rp 2.700 dan 25GB Cuma Rp 10 Ribu. Beragam Promo Telkomsel dan Paket Internet Murah dan Kuota Gratis dari Telkomsel.",
                             AssetImage("images/telk.png"))
+                    ),
+                    InkWell(onTap: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => berita4()),
+                      );
+                    },
+                      child: NewsCard(
+                        "Pasca tindak lanjut rekomendasi kemendagri, 13 OPD pemkab jember kosong",
+                        "JEMBER, KOMPAS.com – Pengembalian 367 pejabat di lingkungan Pemerintah Kabupaten Jember membuat 13 kepala Organisasi Perangkat Daerah ( OPD) kosong.",
+                        AssetImage("images/opd.png"))
                     ),
                   ],
         ),
