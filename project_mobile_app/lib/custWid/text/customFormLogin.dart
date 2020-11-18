@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/secondLogin.dart';
+import 'package:project_mobile_app/home.dart';
 
-class MyCustomField extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   // MyCustomForm(this.iconForm, this.textForm, this.isTeksForm, this.typeText,
   //     this.colorIcon, this.colorTeks);
   // IconData iconForm;
@@ -11,23 +11,20 @@ class MyCustomField extends StatefulWidget {
   // final Color colorIcon;
   // final Color colorTeks;
   @override
-  MyCustomFieldState createState() {
-    return MyCustomFieldState();
+  MyCustomFormState createState() {
+    return MyCustomFormState();
   }
 }
 
-class MyCustomFieldState extends State<MyCustomField> {
+class MyCustomFormState extends State<MyCustomForm> {
   // IconData iconForm;
   // var textForm;
   // TextInputType typeText;
   // final bool isTeksForm = true;
   // Color colorIcon;
   // Color colorTeks;
-  TextEditingController _namaController = TextEditingController();
-  TextEditingController _alamatController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  TextEditingController _confirmPasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -42,40 +39,6 @@ class MyCustomFieldState extends State<MyCustomField> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            TextFormField(
-              controller: _namaController,
-              keyboardType: TextInputType.name,
-              validator: (val) =>
-                  val.isEmpty ? "Nama Pengguna tidak boleh kosong!" : null,
-              textInputAction: TextInputAction.go,
-              obscureText: false,
-              decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.deepOrange,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.orange)),
-                  labelText: "Nama Pengguna :",
-                  labelStyle: TextStyle(color: Colors.black54, fontSize: 14)),
-            ),
-            TextFormField(
-              controller: _alamatController,
-              keyboardType: TextInputType.streetAddress,
-              validator: (val) =>
-                  val.isEmpty ? "Alamat tidak boleh kosong!" : null,
-              textInputAction: TextInputAction.go,
-              obscureText: false,
-              decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.location_on,
-                    color: Colors.orange,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.orange)),
-                  labelText: "Alamat :",
-                  labelStyle: TextStyle(color: Colors.black54, fontSize: 14)),
-            ),
             TextFormField(
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
@@ -95,40 +58,33 @@ class MyCustomFieldState extends State<MyCustomField> {
             ),
             TextFormField(
               controller: _passwordController,
-              keyboardType: TextInputType.visiblePassword,
+              keyboardType: TextInputType.name,
               validator: (val) =>
-                  val.isEmpty ? "Kata sandi tidak boleh kosong!" : null,
+                  val.isEmpty ? "Password tidak boleh kosong!" : null,
               textInputAction: TextInputAction.go,
               obscureText: true,
               decoration: InputDecoration(
                   icon: Icon(
                     Icons.vpn_key,
-                    color: Colors.orange,
+                    color: Colors.orangeAccent,
                   ),
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.orange)),
                   labelText: "Kata Sandi :",
                   labelStyle: TextStyle(color: Colors.black54, fontSize: 14)),
             ),
-            TextFormField(
-              controller: _confirmPasswordController,
-              keyboardType: TextInputType.name,
-              validator: (val) =>
-                  val.isEmpty ? "Kata Sandi tidak boleh kosong!" : null,
-              textInputAction: TextInputAction.go,
-              obscureText: true,
-              decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.vpn_key,
-                    color: Colors.deepOrange,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.orange)),
-                  labelText: "Konfirmasi Kata Sandi :",
-                  labelStyle: TextStyle(color: Colors.black54, fontSize: 14)),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                child: Text(
+                  "Lupa kata sandi? ",
+                  style: TextStyle(color: Colors.orange, fontSize: 12),
+                ),
+              ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 50, 0, 50),
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -140,14 +96,12 @@ class MyCustomFieldState extends State<MyCustomField> {
                             borderRadius: BorderRadius.circular(20)),
                         color: Colors.deepOrange,
                         splashColor: Colors.white,
-                        child: Container(
-                          child: Text(
-                            "DAFTAR",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold),
-                          ),
+                        child: Text(
+                          "MASUK",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
                         ),
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
@@ -157,7 +111,7 @@ class MyCustomFieldState extends State<MyCustomField> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SecondLoginPage()));
+                                    builder: (context) => MainPage()));
                           }
                         },
                       ))

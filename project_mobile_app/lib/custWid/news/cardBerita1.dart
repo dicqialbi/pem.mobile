@@ -8,7 +8,7 @@ class NewsCard extends StatelessWidget {
   AssetImage assetImage;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return Card(
         elevation: 0.5,
         child: ListTile(

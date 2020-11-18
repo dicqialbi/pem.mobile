@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   page_transition: ^1.1.7+2
+  image_picker:
+  file_picker: ^1.4.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,11 +70,12 @@ flutter:
      - family: Poppins
        fonts:
           - asset: fonts/Poppins-Regular.otf
+     - family: Poppinss
+       fonts:
           - asset: fonts/Poppins-Italic.otf
             style: italic
      - family: Poppin
        fonts:
-  #       - asset: fonts/TrajanPro.ttf
          - asset: fonts/Poppins-Bold.otf
            weight: 700
   #

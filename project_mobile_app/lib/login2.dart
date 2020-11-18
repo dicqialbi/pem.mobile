@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/custWid/customForm.dart';
-import 'package:project_mobile_app/custWid/logoLogin.dart';
+import 'package:project_mobile_app/custWid/text/customFormLogin.dart';
+import 'package:project_mobile_app/custWid/logo1.dart';
 
 class SecondLoginPage extends StatelessWidget {
   SecondLoginPage();

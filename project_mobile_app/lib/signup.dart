@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/custWid/cutomField.dart';
+import 'package:project_mobile_app/custWid/text/cutomFormSignup.dart';
 
 class SignUpPage extends StatelessWidget {
   double getSmallDiameter(BuildContext context) =>

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/custWid/berita.dart';
-import 'package:project_mobile_app/custWid/data.dart';
+import 'package:project_mobile_app/custWid/news/berita1.dart';
+import 'package:project_mobile_app/custWid/biodata/biodata1.dart';
 
 class Dashboard extends StatelessWidget {
   Dashboard();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/custWid/data.dart';
+import 'package:project_mobile_app/custWid/biodata/biodata1.dart';
 
 class Biodata extends StatelessWidget {
   @override

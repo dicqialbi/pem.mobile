@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/custWid/customForm.dart';
-import 'package:project_mobile_app/custWid/logoLogin.dart';
+import 'package:project_mobile_app/custWid/text/customFormLogin.dart';
+import 'package:project_mobile_app/custWid/logo1.dart';
 import 'package:project_mobile_app/signup.dart';
 
 class LoginPage extends StatelessWidget {
@@ -96,7 +96,7 @@ class LoginPage extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(25, 335, 25, 10),
                   child: Column(
                     children: <Widget>[
-                      MyCustomForm()
+                      MyCustomForm(),
                     ],
                   ),
                 ),
