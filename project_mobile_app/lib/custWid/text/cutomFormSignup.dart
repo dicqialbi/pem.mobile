@@ -154,7 +154,7 @@ class MyCustomFieldState extends State<MyCustomField> {
                             // Scaffold.of(context).showSnackBar(
                             //     SnackBar(content: Text('Selamat Datang!')));
                             Duration(seconds: 2);
-                            Navigator.push(
+                            Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => SecondLoginPage()));

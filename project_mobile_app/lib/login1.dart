@@ -113,7 +113,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.pushReplacement(context,
+                            Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
                               return SignUpPage();
                             }));
