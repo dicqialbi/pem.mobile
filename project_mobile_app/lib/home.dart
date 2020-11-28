@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:project_mobile_app/custWid/dashboard.dart';
+import 'package:project_mobile_app/custWid/dashboard/dashboard.dart';
 import 'package:project_mobile_app/custWid/news/berita2.dart';
 import 'package:project_mobile_app/profile.dart';
 import 'package:project_mobile_app/custWid/biodata/biodata2.dart';
@@ -135,11 +135,6 @@ class _MainPageState extends State<MainPage> {
           body: TabBarView(children: <Widget>[
             Dashboard(),
             Card(elevation: 0.5, child: Biodata()),
-            // Container(
-            //   child: ListView(
-            //     children: <Widget>[Berita()],
-            //   ),
-            // )
             MyNews()
           ]),
         ),

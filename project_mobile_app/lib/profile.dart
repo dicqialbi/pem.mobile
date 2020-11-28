@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:project_mobile_app/about.dart';
 import 'package:project_mobile_app/custWid/background.dart';
 import 'package:project_mobile_app/custWid/buttonProfile.dart';
+import 'package:project_mobile_app/help.dart';
 import 'package:project_mobile_app/home.dart';
 import 'package:project_mobile_app/login1.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:project_mobile_app/akun.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -16,6 +18,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   File imageFile;
+
   _openGaleri(BuildContext context) async {
     // ignore: deprecated_member_use
     var gambar = await ImagePicker.pickImage(source: ImageSource.gallery);
@@ -40,7 +43,7 @@ class _ProfilePageState extends State<ProfilePage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Import Gambar dari?",
+            title: Text("Pilih Gambar dari?",
                 style: TextStyle(
                     color: Colors.deepOrange, fontWeight: FontWeight.bold)),
             content: SingleChildScrollView(
@@ -69,9 +72,11 @@ class _ProfilePageState extends State<ProfilePage> {
   // ignore: missing_return
   Widget _viewGambarImport() {
     if (imageFile == null) {
-      return Text("Gambar belum diatur!");
+      return Center(
+          child: Text("Gambar belum diatur!",
+              style: TextStyle(color: Colors.black54)));
     } else {
-      Image.file(imageFile, width: 400, height: 400);
+      Image.file(imageFile, height: 200, width: 200);
     }
   }
 
@@ -118,26 +123,27 @@ class _ProfilePageState extends State<ProfilePage> {
                     Center(
                         child: Column(children: <Widget>[
                       Container(
-                        margin: EdgeInsets.all(20),
+                        margin: EdgeInsets.fromLTRB(0, 20, 0, 5),
                         height: 200,
                         width: 200,
                         decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.8),
-                                  spreadRadius: 1,
-                                  blurRadius: 10,
-                                  offset: Offset(1, 2))
-                            ],
-                            borderRadius: BorderRadius.circular(100),
-                            color: Colors.white,
-                            image: DecorationImage(
-                                image: AssetImage("images/group.jpg"),
-                                fit: BoxFit.cover)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.withOpacity(0.8),
+                                spreadRadius: 1,
+                                blurRadius: 10,
+                                offset: Offset(1, 2))
+                          ],
+                          borderRadius: BorderRadius.circular(100),
+                          color: Colors.white,
+                          // image: DecorationImage(
+                          //     image: AssetImage("images/group.jpg"),
+                          //     fit: BoxFit.cover),
+                        ),
+                        child: _viewGambarImport(),
                       ),
-                      _viewGambarImport(),
                       Container(
-                        width: 130,
+                        width: 150,
                         child: RaisedButton(
                           onPressed: () {
                             _showChoiceDialog(context);
@@ -149,11 +155,12 @@ class _ProfilePageState extends State<ProfilePage> {
                             children: <Widget>[
                               Icon(Icons.edit, color: Colors.orangeAccent),
                               Container(
-                                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                                  child: Text(
-                                    "Edit Gambar",
-                                    style: TextStyle(color: Colors.grey),
-                                  ))
+                                margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                child: Text(
+                                  "Ubah Gambar",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -184,24 +191,46 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       child: Column(
                         children: <Widget>[
-                          MyButtonProfile(
-                              Icons.person, "Akun", Colors.deepOrange),
-                          MyButtonProfile(Icons.help, "Bantuan", Colors.orange),
-                          Container(
-                              child: InkWell(
-                                  borderRadius: BorderRadius.circular(10),
-                                  splashColor: Colors.orange,
-                                  onTap: () {
-                                    Duration(microseconds: 1);
-                                    Navigator.push(
-                                        context,
-                                        PageTransition(
-                                            type:
-                                                PageTransitionType.leftToRight,
-                                            child: MyAbout()));
-                                  },
-                                  child: MyButtonProfile(Icons.info, "Tentang",
-                                      Colors.deepOrange)))
+                          InkWell(
+                            borderRadius: BorderRadius.circular(10),
+                            splashColor: Colors.orange,
+                            onTap: () {
+                              Duration(microseconds: 1);
+                              Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      type: PageTransitionType.scale,
+                                      child: MyAkun()));
+                            },
+                            child: MyButtonProfile(
+                                Icons.person, "Akun", Colors.deepOrange),
+                          ),
+                          InkWell(
+                              borderRadius: BorderRadius.circular(10),
+                              splashColor: Colors.orange,
+                              onTap: () {
+                                Duration(microseconds: 1);
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.scale,
+                                        child: MyHelp()));
+                              },
+                              child: MyButtonProfile(
+                                  Icons.help, "Bantuan", Colors.orange)),
+                          InkWell(
+                              borderRadius: BorderRadius.circular(10),
+                              splashColor: Colors.orange,
+                              onTap: () {
+                                Duration(microseconds: 1);
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.scale,
+                                        child: MyAbout()));
+                              },
+                              child: MyButtonProfile(
+                                  Icons.info, "Tentang", Colors.deepOrange))
                         ],
                       ),
                     ),

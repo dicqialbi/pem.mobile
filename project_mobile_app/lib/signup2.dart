@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_mobile_app/custWid/text/customFormSignup.dart';
+import 'package:project_mobile_app/custWid/text/customFormSignup2.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage2 extends StatelessWidget {
   double getSmallDiameter(BuildContext context) =>
       MediaQuery.of(context).size.width * 1 / 3;
 
@@ -118,7 +118,7 @@ class SignUpPage extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(25, 170, 25, 10),
                   child: Column(
                     children: <Widget>[
-                      MyCustomField(),
+                      MySignup(),
                     ],
                   ),
                 )

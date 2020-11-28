@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project_mobile_app/home.dart';
 
 class MyCustomForm extends StatefulWidget {
-  // MyCustomForm(this.iconForm, this.textForm, this.isTeksForm, this.typeText,
-  //     this.colorIcon, this.colorTeks);
-  // IconData iconForm;
-  // var textForm;
-  // final bool isTeksForm;
-  // TextInputType typeText;
-  // final Color colorIcon;
-  // final Color colorTeks;
   @override
   MyCustomFormState createState() {
     return MyCustomFormState();
@@ -17,12 +9,6 @@ class MyCustomForm extends StatefulWidget {
 }
 
 class MyCustomFormState extends State<MyCustomForm> {
-  // IconData iconForm;
-  // var textForm;
-  // TextInputType typeText;
-  // final bool isTeksForm = true;
-  // Color colorIcon;
-  // Color colorTeks;
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
