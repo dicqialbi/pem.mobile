@@ -19,7 +19,13 @@ class MyNews extends StatelessWidget {
           AssetImage("images/telk.png"),
           "15 Juni 2020",
           "Telkomsel Bagi-bagi Paket Internet Murah Sampai Kuota Gratis, 10 GB Rp 2 Ribuan",
-          "Segera daftarkan bro kode promo Paket Internet Murah 30GB Cuma Rp 5 Ribuan, kini ada Promo Telkomsel 10GB Cuma Rp 2.700 dan 25GB Cuma Rp 10 Ribu. Beragam Promo Telkomsel dan Paket Internet Murah dan Kuota Gratis dari Telkomsel.")
+          "Segera daftarkan bro kode promo Paket Internet Murah 30GB Cuma Rp 5 Ribuan, kini ada Promo Telkomsel 10GB Cuma Rp 2.700 dan 25GB Cuma Rp 10 Ribu. Beragam Promo Telkomsel dan Paket Internet Murah dan Kuota Gratis dari Telkomsel."),
+      MyBeritaLengkap(
+        AssetImage("images/bantuan.jpg"),
+        "23 November 2020",
+        "Keluarga Miskin di Desa Bakal Dapat Bantuan Rp 600 Ribu Selama 3 Bulan",
+        "Pemerintah tengah menyiapkan kebijakan baru untuk membantu masyarakat desa kelas bawah yang terdampak virus corona atau Covid-19 dalam bentuk bantuan langsung tunai (BLT). Kebijakan ini dikhususkan bagi masyarakat desa yang selama ini belum mendapatkan bantuan langsung dari pemerintah pusat maupun daerah.",
+      )
     ];
     PageController controller =
         PageController(initialPage: 0, viewportFraction: 0.8);
