@@ -122,41 +122,41 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: <Widget>[
                     Center(
                         child: Column(children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 20, 0, 5),
-                        height: 200,
-                        width: 200,
-                        decoration: BoxDecoration(
+                          Container(
+                          margin: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                          height: 200,
+                          width: 200,
+                          decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.grey.withOpacity(0.8),
                                 spreadRadius: 1,
                                 blurRadius: 10,
                                 offset: Offset(1, 2))
-                          ],
-                          borderRadius: BorderRadius.circular(100),
-                          color: Colors.white,
+                            ],
+                            borderRadius: BorderRadius.circular(100),
+                            color: Colors.white,
                           // image: DecorationImage(
                           //     image: AssetImage("images/group.jpg"),
                           //     fit: BoxFit.cover),
-                        ),
-                        child: _viewGambarImport(),
-                      ),
-                      Container(
-                        width: 150,
-                        child: RaisedButton(
-                          onPressed: () {
+                             ),
+                            child: _viewGambarImport(),
+                             ),
+                          Container(
+                           width: 160,
+                            child: RaisedButton(
+                            onPressed: () {
                             _showChoiceDialog(context);
-                          },
-                          color: Colors.white,
-                          elevation: 3,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(Icons.edit, color: Colors.orangeAccent),
-                              Container(
+                            },
+                            color: Colors.white,
+                            elevation: 3,
+                              child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(Icons.edit, color: Colors.orangeAccent),
+                                Container(
                                 margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                                child: Text(
+                                  child: Text(
                                   "Ubah Gambar",
                                   style: TextStyle(color: Colors.grey),
                                 ),
@@ -165,15 +165,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                       ),
-                      Text(
-                        "KELOMPOK N",
-                        style: TextStyle(
+                          Text("KELOMPOK N",
+                          style: TextStyle(
                             fontSize: 30,
                             color: Colors.deepOrange,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Poppin'),
-                      ),
-                      Text("Pemrograman@berbasis.MobileB"),
+                            ),
+                          Text("Pemrograman@berbasis.MobileB"),
                     ])),
                     Container(
                       margin: EdgeInsets.all(10),
