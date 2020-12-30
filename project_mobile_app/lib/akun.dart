@@ -90,7 +90,7 @@ class _MyAkunState extends State<MyAkun> {
                     DataRow(selected: true, cells: [
                       DataCell(Text("Alamat :"), placeholder: true),
                       DataCell(
-                          Text("Jl. Suanan Kalijaga no 125, Dusun Rambutan"),
+                          Text("Jl. Sunan Kalijaga no 125, Dusun Rambutan"),
                           showEditIcon: true,
                           onTap: () {})
                     ]),
@@ -127,7 +127,7 @@ class _MyAkunState extends State<MyAkun> {
                       selected: false,
                       cells: [
                         DataCell(Text("Email :"), placeholder: true),
-                        DataCell(Text("Agussusilo123@gmail.com"),
+                        DataCell(Text("Agus17@gmail.com"),
                             showEditIcon: true, onTap: () {})
                       ],
                     ),
