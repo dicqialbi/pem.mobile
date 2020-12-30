@@ -76,7 +76,7 @@ class Dashboard extends StatelessWidget {
                 child: Center(
                     child: Text("6 PROGRAM KERJA UNGGULAN",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 19,
                             fontFamily: ("Poppin"),
                             color: Colors.white))),
               ),
