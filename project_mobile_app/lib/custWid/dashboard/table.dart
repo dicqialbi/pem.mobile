@@ -9,35 +9,35 @@ class _MyStatistikaPendudukState extends State<MyStatistikaPenduduk> {
   @override
   Widget build(BuildContext context) {
     return DataTable(
-      headingRowHeight: 40,
-      horizontalMargin: 10.0,
-      columnSpacing: MediaQuery.of(context).size.width * 1 / 9,
+      headingRowHeight: 35,
+      horizontalMargin: 5.0,
+      columnSpacing: MediaQuery.of(context).size.width * 1 / 15,
       columns: <DataColumn>[
         DataColumn(
             label: Text(
           "Dusun",
           style: TextStyle(
               color: Colors.deepOrange,
-              fontSize: 18,
+              fontSize: 17,
               fontWeight: FontWeight.bold),
         )),
         DataColumn(
             label: Text("Pria",
                 style: TextStyle(
                     color: Colors.deepOrange,
-                    fontSize: 18,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold))),
         DataColumn(
             label: Text("Wanita",
                 style: TextStyle(
                     color: Colors.deepOrange,
-                    fontSize: 18,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold))),
         DataColumn(
             label: Text("Jumlah",
                 style: TextStyle(
                     color: Colors.deepOrange,
-                    fontSize: 18,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold)),
             numeric: true)
       ],
