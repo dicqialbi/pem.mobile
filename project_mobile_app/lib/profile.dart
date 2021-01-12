@@ -4,12 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:project_mobile_app/about.dart';
 import 'package:project_mobile_app/custWid/background.dart';
 import 'package:project_mobile_app/custWid/buttonProfile.dart';
+import 'package:project_mobile_app/form.dart';
+import 'package:project_mobile_app/google_maps_flutter.dart';
 import 'package:project_mobile_app/help.dart';
 import 'package:project_mobile_app/home.dart';
 import 'package:project_mobile_app/login1.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project_mobile_app/akun.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:project_mobile_app/main.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -92,7 +96,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   InkWell(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(10),
                     splashColor: Colors.deepOrange,
                     onTap: () {
                       Navigator.pop(context,
@@ -204,6 +208,19 @@ class _ProfilePageState extends State<ProfilePage> {
                             child: MyButtonProfile(
                                 Icons.person, "Akun", Colors.deepOrange),
                           ),
+                          InkWell(
+                              borderRadius: BorderRadius.circular(10),
+                              splashColor: Colors.orange,
+                              onTap: () {
+                                Duration(microseconds: 1);
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.scale,
+                                        child: MyForm()));
+                              },
+                              child: MyButtonProfile(
+                                  Icons.map, "Surat", Colors.orange)),
                           InkWell(
                               borderRadius: BorderRadius.circular(10),
                               splashColor: Colors.orange,
