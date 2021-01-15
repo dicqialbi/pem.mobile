@@ -35,7 +35,7 @@ class Dashboard extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 10),
                 width: MediaQuery.of(context).size.width * 1,
-                height: 40,
+                height: 39,
                 color: Colors.orange,
                 child: Center(
                   child: Text("PROFIL DESA SUKA MAKMUR",
