@@ -5,15 +5,12 @@ import 'package:project_mobile_app/about.dart';
 import 'package:project_mobile_app/custWid/background.dart';
 import 'package:project_mobile_app/custWid/buttonProfile.dart';
 import 'package:project_mobile_app/form.dart';
-import 'package:project_mobile_app/google_maps_flutter.dart';
 import 'package:project_mobile_app/help.dart';
 import 'package:project_mobile_app/home.dart';
 import 'package:project_mobile_app/login1.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project_mobile_app/akun.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:project_mobile_app/main.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -21,28 +18,25 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  File imageFile;
+  File _imageFile;
 
-  _openGaleri(BuildContext context) async {
+  _openGaleri() async {
     // ignore: deprecated_member_use
-    var gambar = await ImagePicker.pickImage(source: ImageSource.gallery);
-    this.setState(() {
-      imageFile = gambar;
+    File image = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50);
+    setState(() {
+      _imageFile = image;
     });
-    Navigator.of(context).pop();
   }
 
-  _openKamera(BuildContext context) async {
+  _openKamera() async {
     // ignore: deprecated_member_use
-    var pickImage = ImagePicker.pickImage(source: ImageSource.camera);
-    var gambar = await pickImage;
-    this.setState(() {
-      imageFile = gambar;
+    File image = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 50);
+    setState(() {
+      _imageFile = image;
     });
-    Navigator.of(context).pop();
   }
 
-  Future<void> _showChoiceDialog(BuildContext context) {
+  Future <void> _showChoiceDialog(context) {
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -56,14 +50,16 @@ class _ProfilePageState extends State<ProfilePage> {
                   GestureDetector(
                     child: Text("Galeri"),
                     onTap: () {
-                      _openGaleri(context);
+                      _openGaleri();
+                      Navigator.of(context).pop();
                     },
                   ),
                   Padding(padding: EdgeInsets.all(5)),
                   GestureDetector(
                     child: Text("Kamera"),
                     onTap: () {
-                      _openKamera(context);
+                      _openKamera();
+                      Navigator.of(context).pop();
                     },
                   )
                 ],
@@ -73,16 +69,6 @@ class _ProfilePageState extends State<ProfilePage> {
         });
   }
 
-  // ignore: missing_return
-  Widget _viewGambarImport() {
-    if (imageFile == null) {
-      return Center(
-          child: Text("Gambar belum diatur!",
-              style: TextStyle(color: Colors.black54)));
-    } else {
-      Image.file(imageFile, height: 200, width: 200);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -126,49 +112,49 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: <Widget>[
                     Center(
                         child: Column(children: <Widget>[
-                          Container(
-                          margin: EdgeInsets.fromLTRB(0, 20, 0, 5),
-                          height: 200,
-                          width: 200,
-                          decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 1,
-                                blurRadius: 10,
-                                offset: Offset(1, 2))
-                            ],
-                            borderRadius: BorderRadius.circular(100),
-                            color: Colors.white,
-                          // image: DecorationImage(
-                          //     image: AssetImage("images/group.jpg"),
-                          //     fit: BoxFit.cover),
-                             ),
-                            child: _viewGambarImport(),
-                             ),
-                          Container(
-                           width: 160,
-                            child: RaisedButton(
-                            onPressed: () {
-                            _showChoiceDialog(context);
-                            },
-                            color: Colors.white,
-                            elevation: 3,
-                              child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.edit, color: Colors.orangeAccent),
-                                Container(
-                                margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                                  child: Text(
-                                  "Ubah Gambar",
-                                  style: TextStyle(color: Colors.grey),
+                          Column(
+                            children: <Widget>[
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Center(
+                                child: GestureDetector(
+                                  onTap: (){
+                                    _showChoiceDialog(context);
+                                  },
+                                  child: CircleAvatar(
+                                      radius: 80,
+                                      backgroundColor: Colors.grey,
+                                      child: _imageFile != null ?
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(100),
+                                        child: Image.file(_imageFile,width: 300,height: 300,fit: BoxFit.cover,
+                                        ),
+                                      )
+                                          : Container(
+                                        decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                  color: Colors.grey.withOpacity(0.8),
+                                                  spreadRadius: 1,
+                                                  blurRadius: 10,
+                                                  offset: Offset(1, 2))
+                                            ],
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.circular(100)),
+                                        width: 400,
+                                        height: 400,
+                                        child: Icon(
+                                          Icons.camera_alt,
+                                          color: Colors.deepOrange,
+                                          size: 35,
+                                        ),
+                                      )
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                      ),
                           Text("KELOMPOK N",
                           style: TextStyle(
                             fontSize: 30,
