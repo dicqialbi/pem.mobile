@@ -157,7 +157,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           Text("KELOMPOK N",
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 25,
                             color: Colors.deepOrange,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Poppin'),
