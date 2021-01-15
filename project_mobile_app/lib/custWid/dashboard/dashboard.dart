@@ -27,8 +27,7 @@ class Dashboard extends StatelessWidget {
                   margin: EdgeInsets.all(10),
                   width: MediaQuery.of(context).size.width * 1,
                   height: 200,
-                  child: Image(
-                      image: AssetImage("images/bd.jpg"), fit: BoxFit.cover)),
+                  child: Image.network("https://www.arsitag.com/proxy-s3-arsitagx-master-article/article-photo/105/xRumah-Adat-Tradisional-Joglo.jpg.pagespeed.ic.DJS9_tj_To.jpg")),
               Text(
                   "Pendopo Agung Desa Suka Makmur, Jl. Sri Rejeki nomer 209, Kecamatan Maju Saja, Kabupaten Jember",
                   style: TextStyle(color: Colors.black54),
