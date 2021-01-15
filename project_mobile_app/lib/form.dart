@@ -37,7 +37,7 @@ class MyForm extends StatelessWidget {
                           color: Colors.white,
                           fontFamily: "Poppins",
                           fontWeight: FontWeight.w700,
-                          fontSize: 20))
+                          fontSize: 21))
                 ]),
          ),
         body: MyCustomForm(),
